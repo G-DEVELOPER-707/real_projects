@@ -13,6 +13,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         appBar: AppBar(
           title: Text("Bog'lanish"),
           backgroundColor: Colors.brown,
@@ -53,7 +54,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 Text(
                   "G'OLIB MA'MUROVICH",
 
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold,letterSpacing: 4),
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold,letterSpacing: 4.3),
                 ),
                 Text("(Flutter Developer)",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
                 SizedBox(height: 50),
