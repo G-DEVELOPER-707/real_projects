@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:get_storage_/pages/contact_page.dart';
 
 import 'package:get_storage_/pages/mainView.dart';
 
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const SplashPage(),
-      routes: {'/MainView': (context) => const MainView()},
+      routes: {'/MainView': (context) => const MainView(),
+        '/ContactPage': (context) => const ContactPage(),},
     );
   }
 }

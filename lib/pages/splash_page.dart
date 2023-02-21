@@ -1,6 +1,6 @@
 import 'dart:async';
 
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -34,22 +34,53 @@ class _SplashPageState extends State<SplashPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor:Colors.black,
       body: AnimatedOpacity(
         opacity: _isVisible ? 1 : 0,
         duration: const Duration(milliseconds: 3000),
         child: Center(
           child: Column(
             children: [
-              SizedBox(height:(MediaQuery.of(context).size.height)/2,),
-
-              const Text(
-                "DEVELOPER_707",
-                style: TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.cyanAccent,),
-              )
+              SizedBox(
+                height: (MediaQuery.of(context).size.height) / 4,
+              ),
+              Stack(
+                children: [
+                  Image.asset(
+                    'assets/images/Islam-PNG-File.png',
+                    fit: BoxFit.cover,
+                  ),
+                  const Positioned(
+                    top: 100,
+                    left: 125,
+                    child: Text(
+                      "Dinimiz ISLOM",
+                      style: TextStyle(
+                        fontSize: 40,
+                        color: CupertinoColors.systemYellow,
+                        fontFamily: "Billabong",
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: const [
+                    // Text(
+                    //   "DEVELOPER_707",
+                    //   style: TextStyle(
+                    //       fontSize: 50,
+                    //       fontWeight: FontWeight.bold,
+                    //       color: Colors.black,
+                    //       backgroundColor: Colors.orange,
+                    //       decoration: TextDecoration.underline,
+                    //       decorationColor: Colors.black),
+                    // ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

@@ -16,7 +16,8 @@ class _DuoInfosState extends State<DuoInfos> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.brown,
-        title: Text(duoList[widget.index].name,style: TextStyle(fontSize: 16),),
+        title: Text(duoList[widget.index].name,style: TextStyle(fontSize: 16,color: Colors.black),),
+        foregroundColor: Colors.black,
       ),
       body: Padding(
         padding: EdgeInsets.all(20),

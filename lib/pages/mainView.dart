@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get_storage_/pages/duolar_page.dart';
 import 'package:get_storage_/pages/salovat_page.dart';
 import 'package:get_storage_/pages/qazo_namozlar.dart';
+import 'package:get_storage_/pages/contact_page.dart';
 import 'package:get_storage_/pages/settings_page.dart';
 import 'package:get_storage_/pages/taqvim_page.dart';
 
@@ -47,18 +48,24 @@ class _MainViewState extends State<MainView> {
           unselectedItemColor: Colors.black,
           selectedIconTheme: const IconThemeData(size: 30),
           // selectedFontSize: 14,
-          items: const [
+          items:  [
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.moon,),
+              icon: SizedBox(
+                height:30,
+                width:35,child: Image.asset('assets/images/pngimg.com - islam_PNG51 (1).png',fit: BoxFit.cover,),),
               label: "Qazolar",
 
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.moon),
+              icon: SizedBox(
+                height:32,
+                width:35,child: Image.asset('assets/images/pngimg.com - islam_PNG11 (1).png',fit: BoxFit.cover,),),
               label: "Zikr"
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.moon),
+              icon: SizedBox(
+                height:30,
+                width:35,child: Image.asset('assets/images/pngimg.com - islam_PNG29.png',fit: BoxFit.cover,),),
               label: "Duolar"
             ),
             BottomNavigationBarItem(
