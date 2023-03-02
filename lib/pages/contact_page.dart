@@ -1,7 +1,8 @@
-
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../states.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({Key? key}) : super(key: key);
@@ -14,16 +15,18 @@ class _ContactPageState extends State<ContactPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "Ilova haqida",
-            style: TextStyle(
-                fontWeight: FontWeight.w700, color: Colors.black, fontSize: 22),
-          ),
-          backgroundColor: Colors.brown,
-          foregroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text(
+          "Ilova haqida".tr(),
+          style: TextStyle(
+              fontWeight: FontWeight.w700, color: Colors.black, fontSize: 22),
         ),
-        body: SingleChildScrollView(
+        backgroundColor: Colors.brown,
+        foregroundColor: Colors.black,
+      ),
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
@@ -34,7 +37,8 @@ class _ContactPageState extends State<ContactPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(height: 90,
+                      SizedBox(
+                        height: 90,
                         width: 70,
                         child: ClipRRect(
                           borderRadius: const BorderRadius.only(
@@ -48,12 +52,20 @@ class _ContactPageState extends State<ContactPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Column(
-                              children: const [
-                                Text(
-                                  'Dinimiz Islom ilovasi',
-                                  style: TextStyle(
-                                      fontSize: 33, fontFamily: "Billabong",),
-                                ),
+                              children: [
+                                Text('Dinimiz Islom ilovasi'.tr(),
+                                    style: lotin == true
+                                        ? TextStyle(
+                                            fontSize: 33,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.black,
+                                            fontFamily: "Billabong",
+                                          )
+                                        : TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.black,
+                                          )),
                                 Text(
                                   "Versiya - 1.0.",
                                   style: TextStyle(
@@ -81,9 +93,16 @@ class _ContactPageState extends State<ContactPage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 50,),
-                Text("Bog'lanish",style: TextStyle(fontSize: 20,),),
-                SizedBox(height: 20,),
+                const SizedBox(
+                  height: 50,
+                ),
+                const Text(
+                  "Dasturchi",
+                  style: TextStyle(fontSize: 30, fontFamily: "Billabong"),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,14 +114,20 @@ class _ContactPageState extends State<ContactPage> {
                         border: Border.all(width: 4, color: Colors.black),
                       ),
                       child: Container(
+                        decoration: BoxDecoration(),
                         padding: const EdgeInsets.all(2),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(70),
-                          child: const Image(
-                            image: AssetImage("assets/images/Super.jpg"),
-                            width: 130,
-                            height: 130,
-                            fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/Image');
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(70),
+                            child: const Image(
+                              image: AssetImage("assets/images/2.jpg"),
+                              width: 130,
+                              height: 130,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -277,20 +302,15 @@ class _ContactPageState extends State<ContactPage> {
                 const SizedBox(
                   height: 20,
                 ),
+                Text(
+                  "DEVELOPER_707",
+                  style: TextStyle(color: Colors.grey.shade400),
+                )
               ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
-}
-
-void _sms() {
-  final Uri smsLaunchUri = Uri(
-    scheme: 'sms',
-    path: '+998777778941',
-    queryParameters: <String, String>{
-      'body': Uri.encodeComponent('Salom'),
-    },
-  );
-  launchUrl(smsLaunchUri);
 }

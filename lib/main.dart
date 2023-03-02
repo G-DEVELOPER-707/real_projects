@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get_storage_/pages/contact_page.dart';
+import 'package:get_storage_/pages/image_page.dart';
 
 import 'package:get_storage_/pages/mainView.dart';
 
@@ -12,25 +13,31 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
-      supportedLocales: [
+      supportedLocales: const [
         Locale('en', 'US'),
         Locale('ru', 'RU'),
         Locale('uz', 'UZ'),
       ],
       path: 'assets/translation',
-      fallbackLocale: const Locale('en', 'US'),
-      // saveLocale: true,
-      child: MyApp()));
+      fallbackLocale: const Locale('uz', 'UZ'),
+       saveLocale: true,
+
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
 
   // This widget is the root of your application.
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+
+    return MaterialApp(debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       title: 'Dinimiz Islom',
       theme: ThemeData(
         // This is the theme of your application.
@@ -46,7 +53,8 @@ class MyApp extends StatelessWidget {
       ),
       home: const SplashPage(),
       routes: {'/MainView': (context) => const MainView(),
-        '/ContactPage': (context) => const ContactPage(),},
+        '/ContactPage': (context) => const ContactPage(),
+        '/Image': (context) => const DeveloperImage(),},
     );
   }
 }

@@ -1,5 +1,7 @@
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage_/duo_list_kiril.dart';
 import 'package:get_storage_/states.dart';
 
 import '../items/duo_item.dart';
@@ -17,11 +19,11 @@ class _DuolarPageState extends State<DuolarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: const Text("Duolar"),backgroundColor: Colors.brown,foregroundColor: Colors.black,centerTitle: true,),
+      appBar: AppBar(title:  Text("Duolar".tr()),backgroundColor: Colors.brown,foregroundColor: Colors.black,centerTitle: true,),
         body: SizedBox(
       height: MediaQuery.of(context).size.height,
       child: ListView.builder(
-          itemCount: duoList.length,
+          itemCount:  lotin==true?duoList.length:duoListKiril.length,
           itemBuilder: (context, index) {
             return InkWell(
                 onTap: () {
@@ -32,7 +34,7 @@ class _DuolarPageState extends State<DuolarPage> {
                         builder: (context) => DuoInfos(index: index)),
                   );
                 },
-                child: duoItem(context, duoList[index], index + 1));
+                child: duoItem(context, lotin==true?duoList[index]:duoListKiril[index], index + 1));
           }),
     ));
   }

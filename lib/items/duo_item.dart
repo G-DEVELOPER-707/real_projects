@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage_/models/duo_model.dart';
@@ -33,7 +34,7 @@ Widget duoItem(BuildContext context, DuoModel duo, int count) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    duo.name,maxLines: 1,
+                    duo.name.tr(),maxLines: 1,
                     style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w800,
@@ -43,7 +44,7 @@ Widget duoItem(BuildContext context, DuoModel duo, int count) {
                     height: 5,
                   ),
                   Text(
-                    duo.duo,
+                    duo.duo.tr(),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(

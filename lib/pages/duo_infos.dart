@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage_/duo_list_kiril.dart';
 import 'package:get_storage_/states.dart';
 
 class DuoInfos extends StatefulWidget {
@@ -16,16 +17,22 @@ class _DuoInfosState extends State<DuoInfos> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.brown,
-        title: Text(duoList[widget.index].name,style: TextStyle(fontSize: 16,color: Colors.black),),
+        title: lotin == true ? Text(duoList[widget.index].name,
+          style: const TextStyle(fontSize: 16, color: Colors.black),) : Text(
+          duoListKiril[widget.index].name,
+          style: const TextStyle(fontSize: 16, color: Colors.black),),
         foregroundColor: Colors.black,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
-          child: Text(
+          child: lotin==true?Text(
             duoList[widget.index].duo,
-            style: TextStyle(fontSize: 16),
-          ),
+            style: const TextStyle(fontSize: 16),
+          ):Text(
+            duoListKiril[widget.index].duo,
+            style: const TextStyle(fontSize: 16),
+          )
         ),
       ),
     );

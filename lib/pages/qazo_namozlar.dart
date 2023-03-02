@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../states.dart';
 import '../storage/get_storagies.dart';
 
 class Qazolar extends StatefulWidget {
@@ -49,14 +51,19 @@ class _QazolarState extends State<Qazolar> {
                     decoration: BoxDecoration(
                         color: Colors.white24,
                         borderRadius: BorderRadius.circular(70)),
-                    child: const Text(
-                      "Qazo namozlar",
-                      style: TextStyle(
+                    child:  Text(
+                      "Qazo namozlar".tr(),
+                      style: lotin==true?TextStyle(
                         fontSize: 65,
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
                         fontFamily: "Billabong",
-                      ),
+                      ):TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black,
+
+                      )
                     ),
                   ),
 
@@ -75,7 +82,7 @@ class _QazolarState extends State<Qazolar> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
-                          children: const [
+                          children:  [
                             Icon(
                               CupertinoIcons.sunrise,
                               size: 40,
@@ -85,7 +92,7 @@ class _QazolarState extends State<Qazolar> {
                               width: 10,
                             ),
                             Text(
-                              "Bomdod",
+                              "Bomdod".tr(),
                               style: TextStyle(
                                   fontSize: 30,
                                   fontWeight: FontWeight.w800,
@@ -157,7 +164,7 @@ class _QazolarState extends State<Qazolar> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
-                          children: const [
+                          children:  [
                             Icon(
                               CupertinoIcons.sun_max,
                               size: 40,
@@ -167,7 +174,7 @@ class _QazolarState extends State<Qazolar> {
                               width: 10,
                             ),
                             Text(
-                              "Peshin",
+                              "Peshin".tr(),
                               style: TextStyle(
                                   fontSize: 30,
                                   fontWeight: FontWeight.w800,
@@ -239,7 +246,7 @@ class _QazolarState extends State<Qazolar> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
-                          children: const [
+                          children:  [
                             Icon(
                               CupertinoIcons.sun_haze,
                               size: 40,
@@ -249,7 +256,7 @@ class _QazolarState extends State<Qazolar> {
                               width: 10,
                             ),
                             Text(
-                              "Asr",
+                              "Asr".tr(),
                               style: TextStyle(
                                   fontSize: 30,
                                   fontWeight: FontWeight.w800,
@@ -319,7 +326,7 @@ class _QazolarState extends State<Qazolar> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
-                          children: const [
+                          children:  [
                             Icon(
                               CupertinoIcons.sunset,
                               size: 40,
@@ -329,7 +336,7 @@ class _QazolarState extends State<Qazolar> {
                               width: 10,
                             ),
                             Text(
-                              "Shom",
+                              "Shom".tr(),
                               style: TextStyle(
                                   fontSize: 30,
                                   fontWeight: FontWeight.w800,
@@ -399,7 +406,7 @@ class _QazolarState extends State<Qazolar> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
-                          children: const [
+                          children:  [
                             Icon(
                               CupertinoIcons.moon_stars,
                               size: 40,
@@ -409,7 +416,7 @@ class _QazolarState extends State<Qazolar> {
                               width: 10,
                             ),
                             Text(
-                              "Xufton",
+                              "Xufton".tr(),
                               style: TextStyle(
                                   fontSize: 30,
                                   fontWeight: FontWeight.w800,
@@ -490,11 +497,11 @@ class _QazolarState extends State<Qazolar> {
                       color: Colors.brown.shade500,
                       borderRadius: BorderRadius.circular(40),
                     ),
-                    child: Padding(
+                    child:  Padding(
                       padding: EdgeInsets.all(10),
                       child: Center(
                         child: Text(
-                          "Ushbu sahifada siz qazo qilgan namozlaringizni sanab qo'yishingiz mumkin",
+                          "Ushbu sahifada siz qazo qilgan namozlaringizni sanab qo'yishingiz mumkin.".tr(),
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
@@ -508,12 +515,12 @@ class _QazolarState extends State<Qazolar> {
                 );
               });
         },
-        child: Icon(
+        backgroundColor: Colors.brown,
+        splashColor: Colors.brown.shade800,
+        child: const Icon(
           CupertinoIcons.info,
           color: Colors.black,
         ),
-        backgroundColor: Colors.brown,
-        splashColor: Colors.brown.shade800,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );

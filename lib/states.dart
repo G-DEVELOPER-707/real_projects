@@ -1,5 +1,5 @@
 import 'models/duo_model.dart';
-
+ bool lotin=true;
 List<DuoModel> duoList = [
 
 DuoModel

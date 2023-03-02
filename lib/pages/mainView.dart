@@ -1,9 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage_/pages/duolar_page.dart';
 import 'package:get_storage_/pages/salovat_page.dart';
 import 'package:get_storage_/pages/qazo_namozlar.dart';
-import 'package:get_storage_/pages/contact_page.dart';
 import 'package:get_storage_/pages/settings_page.dart';
 import 'package:get_storage_/pages/taqvim_page.dart';
 
@@ -53,28 +53,28 @@ class _MainViewState extends State<MainView> {
               icon: SizedBox(
                 height:30,
                 width:35,child: Image.asset('assets/images/pngimg.com - islam_PNG51 (1).png',fit: BoxFit.cover,),),
-              label: "Qazolar",
+              label: "Qazolar".tr(),
 
             ),
             BottomNavigationBarItem(
               icon: SizedBox(
                 height:32,
                 width:35,child: Image.asset('assets/images/pngimg.com - islam_PNG11 (1).png',fit: BoxFit.cover,),),
-              label: "Zikr"
+              label: "Zikr".tr()
             ),
             BottomNavigationBarItem(
               icon: SizedBox(
                 height:30,
                 width:35,child: Image.asset('assets/images/pngimg.com - islam_PNG29.png',fit: BoxFit.cover,),),
-              label: "Duolar"
+              label: "Duolar".tr()
             ),
-            BottomNavigationBarItem(
+             BottomNavigationBarItem(
               icon: Icon(Icons.calendar_month_outlined),
-              label: "Taqvim"
+              label: "Taqvim".tr()
             ),
-            BottomNavigationBarItem(
+             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.settings),
-              label: "Sozlamalar"
+              label: "Sozlamalar".tr()
             ),
           ]),
     );
